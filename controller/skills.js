@@ -2,7 +2,10 @@ const Skill = require ('../models/skills.js')
 
 module.exports= {
     index,
-    getOne: show
+    show,
+    new: addSkill,
+    create,
+    delete: deleteSkill
 }
 
 function index(req,res){
@@ -21,3 +24,17 @@ function show(req,res){
     };
     res.render('skills/show', contextObject);
 };
+
+function addSkill(req, res){
+    res.render('skills/new', {title: 'Add Skills'}) //create new.ejs
+}
+
+function create(req,res){
+    Skill.create(req.body)
+    res.redirect('/skills')
+}
+
+function deleteSkill(req, res){
+    Skill.deleteOne(req.params.id)
+    res.redirect('/skills')
+}

@@ -14,22 +14,27 @@
 
 <body>
     <%- include('../partials/header') %>
-    <section>
-        <% skills.forEach((skill)=>{ %>
-            <div class="card-body">
-                <h2>
-                    <%= skill.skill %>
-                </h2>
-                <p><a class="btn btn-primary" href="/skills/<%= skill.id %>">Learn more</a></p>
-                <p class="card-title"><em>
-                        <%= skill.mastered ? "Mastered!" : "Learning!" %>
-                    </em></p>
-            </div>
-            <% }) %>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+        <main>
+            <section>
+                <% skills.forEach((skill)=>{ %>
+                    <div class="card-body">
+                        <h2>
+                            <%= skill.skill %>
+                        </h2>
+                        <p><a class="btn btn-primary" href="/skills/<%= skill.id %>">Learn more</a></p>
+                        <p class="card-title"><em>
+                                <%= skill.mastered ? "Mastered!" : "Learning!" %>
+                            </em></p>
+                        <form class="delete form" action="/skills/<%= skill.id %>?_method=DELETE" class="delete-form" method="POST">
+                            <button class="delete btn btn-primary type="submit">Unlearn</button>
+                        </form>
+                    </div>
+                    <% }) %>
+            </section>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>

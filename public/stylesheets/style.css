@@ -12,6 +12,24 @@ body {
   align-items: center;
 }
 
+p, input, button {
+  font-size: 20px;
+}
+
+input{
+  width: 100%;
+
+}
+
+button {
+  width: 100%;
+  background-color: #0d6efe;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 h1 {
   color: white;
   text-align: center;
@@ -19,26 +37,84 @@ h1 {
   padding: 20px;
   width: 50vw;
   border-radius: 15px;
+  margin-top: 50px;
+
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  padding: 15px;
+}
+
+nav{
+  display: flex;
+}
+
+nav > p{
+  margin: 0 5px;
+}
+
+main{
+  margin-top: 50px;
+}
+
+a {
+  color: #0d6efe;
 }
 
 section {
   display: flex;
+  flex-direction: column;
 }
 
-div {
+form.add {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 200px;
+}
+
+.card-body {
   margin: 20px;
-  padding: 20px;
+  padding: 25px;
   background-color: white;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 20vh;
-  width: 20vw;
+  height: 300px;
+  width: 300px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.609);
+  text-align: center;
 }
 
-.large-div{
-  width: auto;
+.is-mastered {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
 
+.is-mastered > p{
+margin-right: 50px;
+}
+
+.is-mastered > input {
+  width: auto;
+  height: auto;
+}
+
+button.delete{
+  margin-top: 40px;
+  background-color: red;
+  border: none;
+}
+
+button.delete:hover{
+  background-color: rgb(165, 0, 0);
 }
