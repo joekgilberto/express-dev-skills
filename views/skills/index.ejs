@@ -15,7 +15,7 @@
 <body>
     <%- include('../partials/header') %>
         <main>
-            <section>
+            <section class="all-skills">
                 <% skills.forEach((skill)=>{ %>
                     <div class="card-body">
                         <h2>
@@ -25,9 +25,14 @@
                         <p class="card-title"><em>
                                 <%= skill.mastered ? "Mastered!" : "Learning!" %>
                             </em></p>
-                        <form class="delete form" action="/skills/<%= skill.id %>?_method=DELETE" class="delete-form" method="POST">
-                            <button class="delete btn btn-primary type="submit">Unlearn</button>
-                        </form>
+                        <div class="action-buttons">
+                            <form action="/skills/<%= skill.id %>?_method=PUT" method="POST">
+                                <button class="edit btn btn-primary type=" submit">Edit</button>
+                            </form>
+                            <form action="/skills/<%= skill.id %>?_method=DELETE" method="POST">
+                                <button class="delete btn btn-primary type=" submit">Unlearn</button>
+                            </form>
+                        </div>
                     </div>
                     <% }) %>
             </section>

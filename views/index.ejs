@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <%- include("./partials/header") %>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <%- include("./partials/header") %>
     <main>
-    <p>Welcome to <%= title %></p>
-  </main>
-  </body>
+      <div class="card-body">
+        <p>Welcome to <%= title %>
+        </p>
+      </div>
+    </main>
+</body>
+
 </html>

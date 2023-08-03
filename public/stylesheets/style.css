@@ -12,11 +12,13 @@ body {
   align-items: center;
 }
 
-p, input, button {
+p,
+input,
+button {
   font-size: 20px;
 }
 
-input{
+input {
   width: 100%;
 
 }
@@ -50,25 +52,20 @@ header {
   padding: 15px;
 }
 
-nav{
+nav {
   display: flex;
 }
 
-nav > p{
+nav>p {
   margin: 0 5px;
 }
 
-main{
+main {
   margin-top: 50px;
 }
 
 a {
   color: #0d6efe;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
 }
 
 form.add {
@@ -89,7 +86,7 @@ form.add {
   justify-content: center;
   align-items: center;
   height: 300px;
-  width: 300px;
+  width: 400px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.609);
   text-align: center;
 }
@@ -100,21 +97,48 @@ form.add {
   align-items: baseline;
 }
 
-.is-mastered > p{
-margin-right: 50px;
+.is-mastered>p {
+  margin-right: 50px;
 }
 
-.is-mastered > input {
+.is-mastered>input {
   width: auto;
   height: auto;
 }
 
-button.delete{
-  margin-top: 40px;
-  background-color: red;
-  border: none;
+.action-buttons {
+  display: flex;
 }
 
-button.delete:hover{
+button.edit {
+  margin-top: 20px;
+  background-color: rgb(30, 180, 30);
+  border: none;
+  border-radius: 10px 0 0 10px;
+}
+
+button.edit:hover {
+  background-color: green;
+}
+
+button.delete {
+  margin-top: 20px;
+  background-color: red;
+  border: none;
+  border-radius: 0 10px 10px 0;
+}
+
+button.delete:hover {
   background-color: rgb(165, 0, 0);
+}
+
+button.edit,
+button.delete {
+  width: 100px;
+}
+
+.all-skills {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
