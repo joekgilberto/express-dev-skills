@@ -6,10 +6,11 @@ module.exports= {
     new: addSkill,
     create,
     delete: deleteSkill,
+    edit,
     update
 }
 
-function index(req,res){
+function index(req,res,next){
     const contextObject = {
         title: 'All of My Awesome Skills!',
         skills: Skill.getAll()
@@ -17,7 +18,7 @@ function index(req,res){
     res.render('skills/index',contextObject);
 };
 
-function show(req,res){
+function show(req,res,next){
     const id = req.params.id
     const contextObject = {
         title: 'One of My Skills',
@@ -26,22 +27,30 @@ function show(req,res){
     res.render('skills/show', contextObject);
 };
 
-function addSkill(req, res){
+function addSkill(req,res,next){
     res.render('skills/new', {title: 'Add Skills'}) //create new.ejs
 }
 
-function create(req,res){
+function create(req,res,next){
     Skill.create(req.body)
     res.redirect('/skills')
 }
 
-function update(req, res){
+function edit(req,res,next){
     const id = req.params.id
     const contextObject = {
         title: 'Edit Skills',
         skill: Skill.getOne(id)
     };
-    res.render('skills/edit', contextObject);
+    res.render('skills/edit',contextObject)
+}
+
+function update(req,res,next){
+    console.log('update controller is running')
+    const id = Number(req.params.id);
+    req.body.id = id;
+    Skill.update(id, req.body)
+    res.redirect(`/skills/${id}`);
 }
 
 function deleteSkill(req, res){

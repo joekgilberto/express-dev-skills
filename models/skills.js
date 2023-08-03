@@ -11,7 +11,7 @@ module.exports = {
     getOne,
     create,
     deleteOne,
-    update
+    update: updateOne
 };
 
 function getAll() {
@@ -20,8 +20,6 @@ function getAll() {
 
 function getOne(id){
     id = Number(id)
-    console.log('Looking for ', id)
-    console.log('Found skill', skills.find((skill)=>skill.id === id))
     return skills.find((skill)=>skill.id === id)
 }
 
@@ -38,7 +36,12 @@ function deleteOne(id){
     skills.splice(removedSkill,1)
 }
 
-function update(id){
-    id = Number(id);
-    return skills.find((skill)=>skill.id === id)
+function updateOne(id,data){
+    let idx = skills.findIndex((skill)=> skill.id === id)
+    console.log("IDX!!!!!",idx)
+    if (!data.mastered){
+        data.mastered = null;
+    }
+    let editedSkill = {...skills[idx], ...data}
+    skills.splice(idx, 1, editedSkill)
 }

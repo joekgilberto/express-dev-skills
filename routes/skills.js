@@ -9,6 +9,8 @@ router.get('/new', skillsCtrl.new) //TODO: create new() function in controller a
 
 router.get('/:id', skillsCtrl.show);
 
+router.get('/:id/edit', skillsCtrl.edit);
+
 router.post('/', skillsCtrl.create)
 
 router.put('/:id', skillsCtrl.update)

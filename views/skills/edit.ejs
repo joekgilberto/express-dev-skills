@@ -18,7 +18,7 @@
             <div class="card-body">
                 <h2>Skill: <%= skill.skill %>
                 </h2>
-                <form action="/skills/<% skill.id %>" method="POST" autocomplete="off">
+                <form action="/skills/<%=skill.id%>?_method=PUT" method="POST" autocomplete="off">
                     <!-- input fields in a form, provide data to the request body -->
                     <p>Edit your skill here:</p>
                     <input type="text" value="<%= skill.skill %>" name="skill">
@@ -26,7 +26,7 @@
                         <p>Is it mastered?</p>
                         <input type="checkbox" name="mastered" <% if (skill.mastered === true){ %>checked<% } %>>
                     </div>
-                    <button type="submit"> Save Skill</button>
+                    <button class="btn btn-primary" type="submit"> Save Skill</button>
                 </form>
             </div>
         </main>

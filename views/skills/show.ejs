@@ -21,7 +21,8 @@
         <p>
             <%= skill.mastered ? `Threw hard work and training, I have mastered ${skill.skill}!` : `I am intently and thoroughly studying ${skill.skill}!` %>
         </p>
-        <p><a class="btn btn-primary" href="/skills">Back to Skills</a></p>
+        <a href="/skills/<%= skill.id %>/edit"><button class="edit btn btn-primary">Edit</button></a>
+        <a href="/skills"><button class="btn btn-primary">Back to Skills</button></a>
     </div>
 </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

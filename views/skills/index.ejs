@@ -21,14 +21,12 @@
                         <h2>
                             <%= skill.skill %>
                         </h2>
-                        <p><a class="btn btn-primary" href="/skills/<%= skill.id %>">Learn more</a></p>
+                        <a href="/skills/<%= skill.id %>"><button class="btn btn-primary">Learn more</button></a>
                         <p class="card-title"><em>
                                 <%= skill.mastered ? "Mastered!" : "Learning!" %>
                             </em></p>
                         <div class="action-buttons">
-                            <form action="/skills/<%= skill.id %>?_method=PUT" method="POST">
-                                <button class="edit btn btn-primary type=" submit">Edit</button>
-                            </form>
+                            <a href="/skills/<%= skill.id %>/edit"><button class="edit edit-index btn btn-primary">Edit</button></a>
                             <form action="/skills/<%= skill.id %>?_method=DELETE" method="POST">
                                 <button class="delete btn btn-primary type=" submit">Unlearn</button>
                             </form>
