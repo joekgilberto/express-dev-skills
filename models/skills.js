@@ -32,7 +32,8 @@ function create(data){
 
 function deleteOne(id){
     id = Number(id);
-    const removedSkill = skills.findIndex((skill)=>skill.id===skill)
+    const removedSkill = skills.findIndex((skill)=>skill.id===id)
+    console.log(removedSkill)
     skills.splice(removedSkill,1)
 }
 

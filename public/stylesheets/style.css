@@ -12,15 +12,25 @@ body {
   align-items: center;
 }
 
+h1 {
+  color: white;
+  text-align: center;
+  background-color: #0d6efe;
+  padding: 20px;
+  width: 50vw;
+  border-radius: 15px;
+  margin-top: 50px;
+
+}
+
 p,
 input,
 button {
   font-size: 20px;
 }
 
-input {
-  width: 100%;
-
+a {
+  color: #0d6efe;
 }
 
 button {
@@ -35,14 +45,8 @@ button>a{
   color: #fff;
 }
 
-h1 {
-  color: white;
-  text-align: center;
-  background-color: #0d6efe;
-  padding: 20px;
-  width: 50vw;
-  border-radius: 15px;
-  margin-top: 50px;
+input {
+  width: 100%;
 
 }
 
@@ -67,18 +71,6 @@ main {
   margin-top: 50px;
 }
 
-a {
-  color: #0d6efe;
-}
-
-form.add {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 200px;
-}
-
 .card-body {
   margin: 20px;
   padding: 25px;
@@ -92,6 +84,12 @@ form.add {
   width: 400px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.609);
   text-align: center;
+}
+
+.all-skills {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .card-body>p{
@@ -147,10 +145,4 @@ button.delete:hover {
 button.edit,
 button.delete {
   width: 100px;
-}
-
-.all-skills {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
